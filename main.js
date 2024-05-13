@@ -13,13 +13,20 @@ function setup() {
   card1=new ShopItem("sigma-shop-test","game1.png","SUPER SMART DOGE","its about a smart dog","$0.00")
   card2=new ShopItem("none","game2.png","SIGMA SEAGULL","soooo much skibidi rizz, \n but like ...bird","$59.99")
     card1.button.id("card1-button")
-    Itch.attachBuyButton(document.getElementById(card1.button.id()), {
+
+  try {
+
+Itch.attachBuyButton(document.getElementById(card1.button.id()), {
     // replace the following with the correct information about your game
     user: "bad-productions-dev",
     game: card1.gameId
   });
   card2.gameDiv.position(350,120)
   card1.gameDiv.position(0,120)
+}
+catch {
+card1.button.style("background-color","#CC0002")
+}
 }
 function buyEvent(){
    
@@ -28,7 +35,7 @@ function drawBanner(){
         loadbanner()
     push()
     rect(0,0,width,100)
-    image(bannerObj,00,0,width,100)
+    image(bannerObj,0,0,width,100)
     image(contrastImg,0,0,500,105)
     image(mainLogo,width-110,0,100,100)
     fill(255)
