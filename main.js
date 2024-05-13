@@ -21,12 +21,13 @@ Itch.attachBuyButton(document.getElementById(card1.button.id()), {
     user: "bad-productions-dev",
     game: card1.gameId
   });
-  card2.gameDiv.position(350,120)
-  card1.gameDiv.position(0,120)
+
 }
 catch {
 card1.button.style("background-color","#CC0002")
 }
+card2.gameDiv.position(350,120)
+card1.gameDiv.position(0,120)
 }
 function buyEvent(){
    
